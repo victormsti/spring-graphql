@@ -1,0 +1,23 @@
+type SubjectResponse {
+    id : Int
+    subjectName : String
+    marksObtained : Float
+}
+
+type StudentResponse {
+    id : Int
+    firstName : String
+    lastName : String
+    email : String
+    street : String
+    city : String
+    learningSubjects(subjectFilter: SubjectNameFilter) : [ SubjectResponse ]
+    fullName : String
+}
+
+enum SubjectNameFilter {
+    Java
+    MySQL
+    MongoDB,
+    All
+}

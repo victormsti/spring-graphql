@@ -1,0 +1,4 @@
+type Query {
+    student(id : Int) : StudentResponse
+    students: [ StudentResponse ]
+}

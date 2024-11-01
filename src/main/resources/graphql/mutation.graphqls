@@ -1,0 +1,29 @@
+type Mutation {
+    createStudent(request: CreateStudentRequest): StudentResponse
+    updateStudent(request: UpdateStudentRequest): StudentResponse
+    deleteStudent(id: Int): Boolean
+}
+
+input CreateStudentRequest {
+    firstName : String
+    lastName : String
+    email : String
+    street : String
+    city : String
+    subjectsLearning: [ CreateSubjectRequest ]
+}
+
+input UpdateStudentRequest {
+    id: Int
+    firstName : String
+    lastName : String
+    email : String
+    street : String
+    city : String
+    subjectsLearning: [ CreateSubjectRequest ]
+}
+
+input CreateSubjectRequest{
+    subjectName : String
+    marksObtained : Float
+}
